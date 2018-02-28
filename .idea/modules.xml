@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Retrofit2_Rxjava2.iml" filepath="$PROJECT_DIR$/Retrofit2_Rxjava2.iml" />
+      <module fileurl="file://D:\gitcode\retrofit2_rxjava2\Retrofit2_Rxjava2.iml" filepath="D:\gitcode\retrofit2_rxjava2\Retrofit2_Rxjava2.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\gitcode\retrofit2_rxjava2\app\app.iml" filepath="D:\gitcode\retrofit2_rxjava2\app\app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/retrofit2_rxjava2.iml" filepath="$PROJECT_DIR$/retrofit2_rxjava2.iml" />
     </modules>
   </component>
 </project>

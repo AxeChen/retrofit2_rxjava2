@@ -6,25 +6,25 @@ package com.mg.axe.retrofit2_rxjava2.network;
  */
 
 public class ApiException extends Exception {
-    private String code;
+    private int code;
     private String displayMessage;
 
-    public ApiException(String code, String displayMessage) {
+    public ApiException(int code, String displayMessage) {
         this.code = code;
         this.displayMessage = displayMessage;
     }
 
-    public ApiException(String message, String code, String displayMessage) {
+    public ApiException(int code, String message, String displayMessage) {
         super(message);
         this.code = code;
         this.displayMessage = displayMessage;
     }
 
-    public String getCode() {
+    public int getCode() {
         return code;
     }
 
-    public void setCode(String code) {
+    public void setCode(int code) {
         this.code = code;
     }
 
