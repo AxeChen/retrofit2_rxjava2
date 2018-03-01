@@ -44,4 +44,17 @@ public class RequestManager {
                 .build();
     }
 
+    private static volatile ApiService apiService = null;
+    public static ApiService getApiService() {
+        if (apiService == null) {
+            synchronized (ApiService.class) {
+                if (apiService == null) {
+                    apiService = retrofit.create(ApiService.class);
+                }
+            }
+        }
+        return apiService;
+    }
+
+
 }
