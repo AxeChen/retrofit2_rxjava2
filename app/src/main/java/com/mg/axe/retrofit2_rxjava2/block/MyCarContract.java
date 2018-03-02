@@ -1,6 +1,6 @@
 package com.mg.axe.retrofit2_rxjava2.block;
 
-import com.mg.axe.retrofit2_rxjava2.network.Response;
+import com.mg.axe.retrofit2_rxjava2.network.response.Response;
 
 import java.util.List;
 
@@ -22,7 +22,7 @@ public class MyCarContract {
     }
 
     public interface Model {
-        public Observable<Response<List<CarBean>>> getCarList(String userId);
+        public Observable<Response<List<JavaBean>>> getCarList(String userId);
     }
 
 }

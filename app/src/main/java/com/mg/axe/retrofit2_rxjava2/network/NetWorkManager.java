@@ -1,5 +1,7 @@
 package com.mg.axe.retrofit2_rxjava2.network;
 
+import com.mg.axe.retrofit2_rxjava2.network.request.Request;
+
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
@@ -10,17 +12,17 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * API初始化类
  */
 
-public class RequestManager {
+public class NetWorkManager {
 
-    private static RequestManager mInstance;
-
+    private static NetWorkManager mInstance;
     private static Retrofit retrofit;
+    private static volatile Request request = null;
 
-    public static RequestManager getInstance() {
+    public static NetWorkManager getInstance() {
         if (mInstance == null) {
-            synchronized (RequestManager.class) {
+            synchronized (NetWorkManager.class) {
                 if (mInstance == null) {
-                    mInstance = new RequestManager();
+                    mInstance = new NetWorkManager();
                 }
             }
         }
@@ -38,22 +40,19 @@ public class RequestManager {
         // 初始化Retrofit
         retrofit = new Retrofit.Builder()
                 .client(client)
-                .baseUrl(ApiService.HOST)
+                .baseUrl(Request.HOST)
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
 
-    private static volatile ApiService apiService = null;
-    public static ApiService getApiService() {
-        if (apiService == null) {
-            synchronized (ApiService.class) {
-                if (apiService == null) {
-                    apiService = retrofit.create(ApiService.class);
-                }
+    public static Request getRequest() {
+        if (request == null) {
+            synchronized (Request.class) {
+                request = retrofit.create(Request.class);
             }
         }
-        return apiService;
+        return request;
     }
 
 

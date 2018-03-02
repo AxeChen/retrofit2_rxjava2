@@ -1,15 +1,12 @@
 package com.mg.axe.retrofit2_rxjava2.block;
 
-import android.util.Log;
-
-import com.mg.axe.retrofit2_rxjava2.network.RequestManager;
-import com.mg.axe.retrofit2_rxjava2.network.Response;
-import com.mg.axe.retrofit2_rxjava2.network.ResponseTransformer;
+import com.mg.axe.retrofit2_rxjava2.network.response.Response;
+import com.mg.axe.retrofit2_rxjava2.network.response.ResponseTransformer;
 import com.mg.axe.retrofit2_rxjava2.network.schedulers.BaseSchedulerProvider;
-import com.mg.axe.retrofit2_rxjava2.network.schedulers.SchedulerProvider;
 
 import java.util.List;
 
+import io.reactivex.Observer;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
@@ -39,14 +36,16 @@ public class MyCarPresenter {
     }
 
     public void getCarList() {
-        Disposable disposable = model.getCarList("7039887")
+
+        Disposable disposable = model.getCarList("xxxxxx")
                 .compose(ResponseTransformer.handleResult())
                 .compose(schedulerProvider.applySchedulers())
                 .subscribe(carBeans -> {
-                    List<CarBean> carBeans1 = carBeans;
-                    Log.i("sdfsdf",carBeans.toString());
+                    // 处理数据 直接获取到List<JavaBean> carBeans
                 }, throwable -> {
+                    // 处理异常
                 });
+
         mDisposable.add(disposable);
     }
 

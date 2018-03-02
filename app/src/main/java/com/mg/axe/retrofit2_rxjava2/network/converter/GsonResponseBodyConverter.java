@@ -1,4 +1,4 @@
-package com.mg.axe.retrofit2_rxjava2.network;
+package com.mg.axe.retrofit2_rxjava2.network.converter;
 
 import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
@@ -9,11 +9,7 @@ import java.io.IOException;
 import okhttp3.ResponseBody;
 import retrofit2.Converter;
 
-/**
- * @Author Renwei.Sun
- * @Create 2017/9/4
- * @Description Content
- */
+
 final class GsonResponseBodyConverter
         <T> implements Converter<ResponseBody, T> {
     private final Gson gson;

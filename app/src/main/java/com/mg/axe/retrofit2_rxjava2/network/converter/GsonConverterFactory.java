@@ -1,4 +1,4 @@
-package com.mg.axe.retrofit2_rxjava2.network;
+package com.mg.axe.retrofit2_rxjava2.network.converter;
 
 
 import com.google.gson.Gson;
@@ -20,7 +20,6 @@ import retrofit2.Retrofit;
 public final class GsonConverterFactory extends Converter.Factory {
 
 
-    @SuppressWarnings("ConstantConditions") // Guarding public API nullability.
     public static GsonConverterFactory create(Gson gson) {
         if (gson == null) throw new NullPointerException("gson == null");
         return new GsonConverterFactory(gson);

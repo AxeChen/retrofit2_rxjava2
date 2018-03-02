@@ -1,4 +1,4 @@
-package com.mg.axe.retrofit2_rxjava2.network;
+package com.mg.axe.retrofit2_rxjava2.network.response;
 
 /**
  * Created by Zaifeng on 2018/2/28.

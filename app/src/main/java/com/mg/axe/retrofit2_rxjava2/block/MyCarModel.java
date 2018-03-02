@@ -1,7 +1,7 @@
 package com.mg.axe.retrofit2_rxjava2.block;
 
-import com.mg.axe.retrofit2_rxjava2.network.RequestManager;
-import com.mg.axe.retrofit2_rxjava2.network.Response;
+import com.mg.axe.retrofit2_rxjava2.network.NetWorkManager;
+import com.mg.axe.retrofit2_rxjava2.network.response.Response;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import io.reactivex.Observable;
 
 public class MyCarModel implements MyCarContract.Model {
     @Override
-    public Observable<Response<List<CarBean>>> getCarList(String userId) {
-        return RequestManager.getApiService().getCarList(userId);
+    public Observable<Response<List<JavaBean>>> getCarList(String userId) {
+        return NetWorkManager.getRequest().getList(userId);
     }
 }

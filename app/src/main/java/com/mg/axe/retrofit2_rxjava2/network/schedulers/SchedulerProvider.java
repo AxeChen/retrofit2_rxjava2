@@ -42,7 +42,6 @@ public class SchedulerProvider implements BaseSchedulerProvider {
     @Override
     @NonNull
     public Scheduler ui() {
-
         return AndroidSchedulers.mainThread();
     }
 
