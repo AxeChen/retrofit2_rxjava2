@@ -9,7 +9,8 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- * Provides different types of schedulers.
+ * Created by Zaifeng on 2018/2/28.
+ * 线程切换
  */
 public class SchedulerProvider implements BaseSchedulerProvider {
 
@@ -48,7 +49,7 @@ public class SchedulerProvider implements BaseSchedulerProvider {
     @NonNull
     @Override
     public <T> ObservableTransformer<T, T> applySchedulers() {
-        return observable -> observable.subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread());
+        return observable -> observable.subscribeOn(io())
+                .observeOn(ui());
     }
 }

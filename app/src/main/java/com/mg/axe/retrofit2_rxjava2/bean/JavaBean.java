@@ -1,4 +1,4 @@
-package com.mg.axe.retrofit2_rxjava2.block;
+package com.mg.axe.retrofit2_rxjava2.bean;
 
 import android.os.Parcel;
 import android.os.Parcelable;

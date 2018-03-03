@@ -12,19 +12,29 @@ import com.mg.axe.retrofit2_rxjava2.network.schedulers.SchedulerProvider;
  * Created by Zaifeng on 2018/3/1.
  */
 
-public class MyCarListActivity extends AppCompatActivity implements MyCarContract.View {
+public class ViewActivity extends AppCompatActivity implements Contract.View {
 
-    private MyCarPresenter presenter;
+    private Presenter presenter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_layout);
 
-        presenter = new MyCarPresenter(new MyCarModel(), this, SchedulerProvider.getInstance());
+        presenter = new Presenter(new Model(), this, SchedulerProvider.getInstance());
     }
 
     public void btnRequest(View view) {
-        presenter.getCarList();
+        presenter.getList();
+    }
+
+    @Override
+    public void getDataSuccess() {
+
+    }
+
+    @Override
+    public void getDataFail() {
+
     }
 }

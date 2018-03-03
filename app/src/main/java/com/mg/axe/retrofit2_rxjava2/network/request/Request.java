@@ -1,6 +1,6 @@
 package com.mg.axe.retrofit2_rxjava2.network.request;
 
-import com.mg.axe.retrofit2_rxjava2.block.JavaBean;
+import com.mg.axe.retrofit2_rxjava2.bean.JavaBean;
 import com.mg.axe.retrofit2_rxjava2.network.response.Response;
 
 import java.util.List;
